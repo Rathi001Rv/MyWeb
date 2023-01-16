@@ -10,14 +10,14 @@ function SignUp(){
 
     if(Email.value===""){
       setTimeout(() => {
-        Massage.innerHTML="Type Email";
+        Massage.innerHTML=" Please Type Email";
         Massage.style.color="red";
         
       }, 3000);
         Email.focus();
     }else if(Password.value === ""){
       setTimeout(() => {
-        Massage.innerHTML="Type Password";
+        Massage.innerHTML="Please Type Password";
         Massage.style.color="red";
         
       }, 3000);

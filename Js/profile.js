@@ -63,8 +63,7 @@ const FatherName = document.getElementById("fathername");
   })
 // Update User Data
 function Update(){
-    let UserD
-    ata={
+    let UserData={
       Name: Name.value,
       FatherName: FatherName.value,
       CNIC:CNIC.value,
@@ -81,9 +80,9 @@ function Update(){
   }
 
   // Profile Img
-  let ProgressBar = document.getElementById("progressbar")
-
+  
   function UploadProfilePic(event){
+    let ProgressBar = document.getElementById("progressbar")
     // console.log(event.target.files[0])
     var storageRef = firebase.storage().ref()
     var ImgRef = event.target.files[0];
@@ -118,6 +117,8 @@ uploadTask.on('state_changed',
 );
 }
 //Cover Img
+let LoaderBar = document.getElementById("progressbar")
+
 function UploadCoverImg(event){
   // console.log(event.target.files[0])
   var storageRef = firebase.storage().ref()
@@ -128,9 +129,9 @@ uploadTask.on('state_changed',
 (snapshot) => {
   var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
   console.log('Upload is ' + progress + '% done');
-  ProgressBar.style.display="block";
-  ProgressBar.style.width=`${Math.round(progress)}%`;
-  ProgressBar.innerHTML=`${Math.round(progress)}%`
+  LoaderBar.style.display="block";
+  LoaderBar.style.width=`${Math.round(progress)}%`;
+  LoaderBar.innerHTML=`${Math.round(progress)}%`
 }, 
 (error) => {
   // Handle unsuccessful uploads
@@ -143,7 +144,7 @@ uploadTask.on('state_changed',
     
     firebase.firestore().collection("users/").doc(uid).update({CoverIMgPath: downloadURL})
     .then(()=>{
-      ProgressBar.style.display="none";
+      LoaderBar.style.display="none";
 
     })
 
