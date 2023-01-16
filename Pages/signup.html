@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="../CSS/golabal.css">
+    <link rel="stylesheet" href="../CSS/signup.css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDiNX3a6soZYor3JWE5E0Ftt4eP-ISmeck",
+          authDomain: "final-assignment-9a73e.firebaseapp.com",
+          projectId: "final-assignment-9a73e",
+          storageBucket: "final-assignment-9a73e.appspot.com",
+          messagingSenderId: "984351041790",
+          appId: "1:984351041790:web:373d7197dd2552e08d9daf",
+          measurementId: "G-SVCBCFCB2P"
+        };
+      
+        firebase.initializeApp(firebaseConfig)
+
+      </script>
+</head>
+<body>
+    <div class="container">
+        <div id="form">
+            <p class="formtitle">SignUp Form</p>
+            <b>Type Name</b>
+            <input type="text" id="name" placeholder="Type Name">
+            <b>Type Father's Name</b>
+            <input type="text" id="fathername" placeholder="Type Father's Name">
+            <b>Type Email</b>
+            <input type="email" id="email" placeholder="Type Email">
+            <b>Type CNIC Number</b>
+            <input type="number" id="nic" placeholder="Type CNIC Number">
+            <b>Type  Mobile Number</b>
+            <input type="number" id="contnumber" placeholder="Type  Mobile Number">
+            <b>Type  Password</b>
+            <input type="password"  placeholder="Type Password" id="password">
+                    <p id="massage"></p><br>
+            <button onclick="SignUp()" class="button">SignUp</button><br>
+             <p>Already have an account? <a href="./login.html" >Login</a></p>
+
+        </div>
+
+    </div>
+</body>
+<script src="../Js/signup.js"></script>
+</html>

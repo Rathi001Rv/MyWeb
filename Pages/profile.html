@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/golabal.css">
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDiNX3a6soZYor3JWE5E0Ftt4eP-ISmeck",
+          authDomain: "final-assignment-9a73e.firebaseapp.com",
+          projectId: "final-assignment-9a73e",
+          storageBucket: "final-assignment-9a73e.appspot.com",
+          messagingSenderId: "984351041790",
+          appId: "1:984351041790:web:373d7197dd2552e08d9daf",
+          measurementId: "G-SVCBCFCB2P"
+        };
+        
+        firebase.initializeApp(firebaseConfig)
+        
+        </script>
+    <title>Profile</title>
+       
+</head>
+<body>
+  <div id="main">
+    <!-- <p class="form">Profile</p> -->
+    <div id="navbar">
+      <a href="./home.html"> <img src="../IMG/home.png" alt="" width="50px" height="50px" class="navlogo"></a>
+      <a href="./allusers.html"><img src="../IMG/friends.png" alt="" width="50px" height="50px" class="navlogo"></a>
+     <a href="./video.html"> <img src="../IMG/video-camera.png" alt="" width="50px" height="50px"class="navlogo"></a>
+      <a href="./post.html"><img src="../IMG/add.png" alt="" width="50px" height="50px" class="navlogo"></a>
+      <a href="./profile.html"><img src="../IMG/profile.png" alt="" width="50px" height="50px" class="navlogo"></a>
+      <a href="./login.html" onclick="Logout()"><img src="../IMG/log-out.png" alt="" width="50px" height="50px" class="navlogo"></a> 
+     </div>
+     <div id="inner main">
+    <div id="ProfileData">
+      <div id="coverdata">
+      <img src="../IMG/profile.png" id="CoverImg"  alt="">
+      <input type="file" id="Cover" hidden onchange="UploadCoverImg(event)">
+    <label for="Cover" id="upload-0"><img height="40px" width="40px" id="upload-cover"src="https://cdn-icons-png.flaticon.com/128/3097/3097412.png" alt=""></label>
+      </div>
+    <div id="profilimgdata">
+      <label for="profile" id="upload-1"><img height="40px" width="40px" id="upload-2"src="https://cdn-icons-png.flaticon.com/128/3097/3097412.png" alt=""></label>
+      <input type="file" hidden id="profile" onchange="UploadProfilePic(event)">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="" id="profileIMG">
+    </div>
+<br>
+    <div  id="bar">
+      <div id="progressbar">
+      </div>
+    </div>
+    </div>
+  </div>
+  <div id="mydata">
+    <input type="text" id="name" placeholder="Type Name"><br>
+    <input type="text" id="fathername" placeholder="Type Father's Name"><br>
+    <input type="email" id="email" placeholder="Type Email"><br>
+    <input type="number" id="nic" placeholder="Type CNIC Number"><br>
+    <input type="number" id="number" placeholder="Type  Number"><br>
+    <input type="password"  placeholder="Type Password" id="password"><br>
+    <textarea placeholder="Add Bio"></textarea>
+            <p id="massage"></p>
+            <button onclick="Update()">Update</button>
+  </div>
+            <br>
+            <br>
+            <h1>My Posts</h1>
+            <div id="postshow">
+            </div>
+            </div>
+</body>
+<script src="../Js/profile.js"></script>
+</html>

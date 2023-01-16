@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creat Posts</title>
+    <link rel="stylesheet" href="../CSS/golabal.css">
+    <link rel="stylesheet" href="../CSS/post.css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-firestore.js"></script>
+    <script src= "https://www.gstatic.com/firebasejs/6.0.4/firebase-storage.js"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://example.com/fontawesome/v6.2.1/js/all.js" data-auto-replace-svg="nest"></script>
+    <!-- //Boot Strap
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script> -->
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDiNX3a6soZYor3JWE5E0Ftt4eP-ISmeck",
+          authDomain: "final-assignment-9a73e.firebaseapp.com",
+          projectId: "final-assignment-9a73e",
+          storageBucket: "final-assignment-9a73e.appspot.com",
+          messagingSenderId: "984351041790",
+          appId: "1:984351041790:web:373d7197dd2552e08d9daf",
+          measurementId: "G-SVCBCFCB2P"
+        };
+      
+        firebase.initializeApp(firebaseConfig)
+
+      </script>
+</head>
+<body>
+    <div id="main">
+        <div id="navbar">
+            <a href="./home.html"> <img src="../IMG/home.png" alt="" width="50px" height="50px" class="navlogo"></a>
+            <a href="./allusers.html"><img src="../IMG/friends.png" alt="" width="50px" height="50px" class="navlogo"></a>
+           <a href="./video.html"> <img src="../IMG/video-camera.png" alt="" width="50px" height="50px"class="navlogo"></a>
+            <a href="./post.html"><img src="../IMG/add.png" alt="" width="50px" height="50px" class="navlogo"></a>
+            <a href="./profile.html"><img src="../IMG/profile.png" alt="" width="50px" height="50px" class="navlogo"></a>
+            <a href="./login.html" onclick="Logout()"><img src="../IMG/log-out.png" alt="" width="50px" height="50px" class="navlogo"></a> 
+           </div>
+    <div id="innermain">
+        <textarea  id="post" cols="80" rows="10"></textarea>
+        <input type="file" id="UploadPost" hidden onchange="PostImage(event)"/>
+        <button id="uploadmedia"><b> Upload Images & Videos</b><label for="UploadPost" id="upload-1"> 
+        <img height="20px" width="40px" id="UploadIcon" src="https://cdn-icons-png.flaticon.com/128/3097/3097412.png" alt="">
+    </label></button>
+        <div  id="bar">
+            <div id="progressbar">
+            </div>
+        <p id="message"></p>
+        <div id="addpostmain"><button id="addpost" onclick="Postbutton()"><b>Add Post</b></button></div>
+    </div>
+        </div>
+</body>
+<script src="../Js/post.js" ></script>
+</html>
